@@ -103,7 +103,7 @@ function displaySearchHistory(history) {
 }
 
 function displayForecast(data) {
-    // Extract and display the 5-day forecast data
+    // Extract and display the 5-day forecast data on page
     const forecastList = data.list;
 
     let forecastHTML = '<h2>5-Day Forecast</h2>';
