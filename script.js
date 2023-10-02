@@ -6,6 +6,8 @@ const currentWeather = document.getElementById('current-weather');
 const forecast = document.getElementById('forecast');
 // Select the city options buttons
 const cityOptions = document.querySelectorAll('.city-option');
+// Maximum number of cities to keep in history
+const maxHistoryItems = 20;
 
 // Add a click event listener to each city option
 cityOptions.forEach(cityButton => {
@@ -69,16 +71,45 @@ function displayCurrentWeather(data) {
     `;
 }
 
+// Function to add a city to the search history
 function addToSearchHistory(city) {
-    const historyItem = document.createElement('button');
-    historyItem.textContent = city;
-    historyItem.addEventListener('click', function () {
-        fetchWeatherData(city);
-    });
+    // Retrieve the current search history from local storage or initialize it as an empty array
+    let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
-    searchHistory.appendChild(historyItem);
+    // Check if the city is already in the history, and remove it if found
+    searchHistory = searchHistory.filter(item => item !== city);
+
+    // Add the city to the beginning of the history array
+    searchHistory.unshift(city);
+
+    // Limit the history to the maximum number of items
+    if (searchHistory.length > maxHistoryItems) {
+        searchHistory.pop(); // Remove the oldest item
+    }
+
+    // Save the updated history to local storage
+    localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+
+    // Update the display of search history
+    displaySearchHistory(searchHistory);
 }
 
+// Function to display the search history
+function displaySearchHistory(history) {
+    // Clear the previous history displayed
+    searchHistory.innerHTML = '';
+
+    // Loop through the history and create buttons for each city
+    history.forEach(city => {
+        const historyItem = document.createElement('button');
+        historyItem.textContent = city;
+        historyItem.addEventListener('click', function () {
+            fetchWeatherData(city);
+        });
+
+        searchHistory.appendChild(historyItem);
+    });
+}
 
 function displayForecast(data) {
     // Extract and display the 5-day forecast data
