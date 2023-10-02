@@ -45,7 +45,6 @@ function fetchWeatherData(city) {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`)
         .then(response => response.json())
         .then(data => {
-            // Display 5-day forecast
             displayForecast(data);
         })
         .catch(error => {
@@ -54,7 +53,6 @@ function fetchWeatherData(city) {
 }
 
 function displayCurrentWeather(data) {
-    // Extract relevant data from the API response and display it
     const cityName = data.name;
     const date = new Date(data.dt * 1000).toLocaleDateString();
     const weatherIcon = `<img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="${data.weather[0].description}">`;
@@ -73,24 +71,17 @@ function displayCurrentWeather(data) {
 
 // Function to add a city to the search history
 function addToSearchHistory(city) {
-    // Retrieve the current search history from local storage or initialize it as an empty array
     let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
-
     // Check if the city is already in the history, and remove it if found
     searchHistory = searchHistory.filter(item => item !== city);
-
-    // Add the city to the beginning of the history array
     searchHistory.unshift(city);
-
     // Limit the history to the maximum number of items
     if (searchHistory.length > maxHistoryItems) {
         searchHistory.pop(); // Remove the oldest item
     }
 
-    // Save the updated history to local storage
     localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
 
-    // Update the display of search history
     displaySearchHistory(searchHistory);
 }
 
