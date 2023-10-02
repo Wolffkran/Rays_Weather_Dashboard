@@ -4,6 +4,16 @@ const cityInput = document.getElementById('city-input');
 const searchHistory = document.getElementById('search-history');
 const currentWeather = document.getElementById('current-weather');
 const forecast = document.getElementById('forecast');
+// Select the city options buttons
+const cityOptions = document.querySelectorAll('.city-option');
+
+// Add a click event listener to each city option
+cityOptions.forEach(cityButton => {
+    cityButton.addEventListener('click', function () {
+        const selectedCity = this.getAttribute('data-city');
+        fetchWeatherData(selectedCity);
+    });
+});
 
 searchForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -68,6 +78,7 @@ function addToSearchHistory(city) {
 
     searchHistory.appendChild(historyItem);
 }
+
 
 function displayForecast(data) {
     // Extract and display the 5-day forecast data
