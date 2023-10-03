@@ -125,5 +125,6 @@ function displayForecast(data) {
         `;
     });
 
+    
     forecast.innerHTML = forecastHTML;
 }

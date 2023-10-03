@@ -5,21 +5,21 @@ body, h1, h2, p, button {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #444444;
+  background-color: #1b2838;
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #2a475e;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px #171a21;
 }
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #c7d5e0;
 }
 
 form {
@@ -31,14 +31,14 @@ form {
 
 #city-input {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #c7d5e0;
   border-radius: 5px;
   margin-right: 10px;
 }
 
 button {
-  background-color: #007BFF;
-  color: #fff;
+  background-color: #66c0f4;
+  color: #c7d5e0;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -66,17 +66,19 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #66c0f4;
 }
 
 #current-weather {
-  background-color: #404572;
+  color: #c7d5e0;
+  background-color: #2a475e;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px #2a475e;
 }
 
 #forecast {
+  color: #c7d5e0;
   display: flex; 
   justify-content: flex-start; 
   flex-wrap: nowrap; 
@@ -91,4 +93,3 @@ button:hover {
   align-items: center;
   padding: 10px; 
 }
-
