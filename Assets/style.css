@@ -4,8 +4,12 @@ body, h1, h2, p, button {
 }
 
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #1b2838;
+}
+
+.custom-text {
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
