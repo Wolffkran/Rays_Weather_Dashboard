@@ -1,25 +1,25 @@
-# Rays Workday Scheduler
+# Rays Weather Dashboard
 
 ## Description
 
-My goal when working on this project was to help me learn the intricacies of applying dayjs to my javascript.
+My goal when working on this project was to help me learn about working with APIs and handling data.
 
-The Workday Scheduler is a user-friendly calendar application designed to help you organize your workday efficiently. 
+The weather dashboard is a user friendly webpage used to help you plan out your day accordingly. 
 
-Working on this was helpful because it helped me solidify my usage of APIs and loop functions.
+Working on this was helpful because it helped me solidify my usage of APIs and fetch functions.
 
 ## Installation
 
-1. Clone the repository to your local machine: https://github.com/Wolffkran/Rays_Workday_Scheduler.git
+1. Clone the repository to your local machine: https://github.com/Wolffkran/Rays_Weather_Dashboard.git
 
-2. Navigate to the project directory: cd Rays_Workday_Scheduler
+2. Navigate to the project directory: cd Rays_Weather_Dashboard
 
-3. Open your web browser and visit /Rays_Workday_Scheduler/index.html to view the application.
+3. Open your web browser and visit /Rays_Weather_Dashboard/index.html to view the application.
 
 
 ## Usage
 
-![A user arranges their schedule and saves it according to their needs](./Images/Scheduler.png)
+![A user obtains information on weather](.Assets/Images/image.png)
 
 ##Credits
 https://openweathermap.org/
