@@ -19,9 +19,10 @@ Working on this was helpful because it helped me solidify my usage of APIs and f
 
 ## Usage
 
-![A user obtains information on weather](.Assets/Images/image.png)
+![A user obtains information on weather](Assets/Images/image.png)
 
 ##Credits
+
 https://openweathermap.org/
 
 ## License
